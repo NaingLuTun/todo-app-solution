@@ -342,7 +342,7 @@ input[type="checkbox"]:checked::after {
   }
 }
 
-@media all and (max-width: 1050px) and (min-height: 1000px) {
+@media all and (max-width: 1050px) and (min-height: 1000px)  and (aspect-ratio: 4/3){
   :root {
     --body-wide-bg-img: url("./assets/images/bg-desktop-light.jpg");
   }
