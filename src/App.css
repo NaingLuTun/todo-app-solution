@@ -140,6 +140,7 @@ body{
   color: var(--dark-grey-text);
   font-size: var(--list-input-fs);
   background-color: var(--elements-bg-color);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.274);
   border: none;
 }
 
