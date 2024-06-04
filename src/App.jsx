@@ -385,7 +385,6 @@ function App() {
             <button onClick={displayActive}className='whichToDisplayStates darkTheme' id='active'>Active</button>
             <button onClick={displayCompleted} className='whichToDisplayStates darkTheme' id='completed'>Completed</button>
           </div>
-          <p>haha</p>
           <p id='dndInfo'>Drag and drop to reorder list</p>
       </div>
   )
