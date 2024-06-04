@@ -197,7 +197,7 @@ function App() {
 
 
     const deleteById = (id) => {
-      setTodos(todos => todos.filter(todo => todo.id !== id))
+      setTodos(todos => todos.filter(todo => todo.id !== id).map((todo, index) => ({...todo, id: index + 1})))
       localStorage.removeItem(id)
     }
 
@@ -293,7 +293,7 @@ function App() {
     })
   }
 
-  const clearCompleted = (todos) => {
+  const clearCompleted = () => {
 
     //Use => {} for single-expression implicit returns in arrow functions.
 
@@ -305,8 +305,10 @@ function App() {
       id: index + 1, // Update ID to its new index + 1
     }))
     setTodos(remainingTodos)
-    localStorage.clear() // Clear localStorage as well
+
+    todos.map(todo => {localStorage.removeItem(todo.id)})
   }
+
 
   try {
     const getInput = document.getElementById("listInput")
@@ -375,7 +377,7 @@ function App() {
             </DndContext>
             <div className='darkTheme' id='itemsLeftAndClearComplete'>
               <p id='itemsLeft'>{itemsLeft} items left</p>
-              <button className='darkTheme' onClick={() => clearCompleted(todos)} id='clearComplete'>Clear Completed</button>
+              <button className='darkTheme' onClick={clearCompleted} id='clearComplete'>Clear Completed</button>
             </div>
           </div>
           <div className='darkTheme' id='allActiveOrCompletedStates'>
